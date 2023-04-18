@@ -1,0 +1,15 @@
+xlrd
+xlutils
+xlwings
+pandas
+xlrd
+pymssql
+cursor
+matplotlib
+numpy
+python-docx
+pyyaml==5.3.1
+requests
+jsonpath
+docx
+bs4
