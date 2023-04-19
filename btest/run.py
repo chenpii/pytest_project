@@ -14,3 +14,5 @@ if __name__ == '__main__':
     pytest.main(['-sv'])
     # 运行指定目录下的所有用例，并展示简要结果信息
     # pytest.main(['-q', '.\\D1'])
+    # pytest.main(['-q', '.\\D1\\test_01_pass_fail.py'])
+    # pytest.main(['-q', '.\\D1\\test_05_exception.py::test_student_score_raise'])
