@@ -6,6 +6,7 @@ from pytest_assume.plugin import assume
 from btest.D2.face_to_object import Person
 
 
+# 验证实例化对象的每个属性值
 def test_field_access():
     p = Person('lyf', 22, 170, 50)
     with assume:
@@ -21,6 +22,7 @@ def test_field_access():
         assert p.weight == 50
 
 
+# 验证两个对象是否相等
 class TestEquality():
     def test_person(self):
         # 预期值
