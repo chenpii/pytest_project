@@ -18,3 +18,8 @@ def test_email_received(sending_user, receiving_user):
 
     # 断言 邮件是否在接收人的邮箱中
     assert email in receiving_user.inbox
+
+# 说明：
+# 同级别的夹具环境初始化是顺序、环境清理是逆序。
+# 夹具yield 前面代码是按照参数顺序执行。环境初始化是顺序。
+# 夹具yield 后面代码是按照参数逆序执行。环境清理是逆序。
