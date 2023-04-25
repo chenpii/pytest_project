@@ -40,9 +40,15 @@ def method_indirect(request):
     return '我是夹具' + request.param
 
 
+@pytest.fixture()
+def x(request):
+    return '我是x夹具' + request.param
+
+
 # 个人理解：如果indirect为True，那么会将参数值先传递给跟参数名相同的夹具，夹具可能对参数做了处理之后再返回给测试用例
-@pytest.mark.parametrize(argnames='method_indirect',
-                         argvalues=['method_A', 'method_B', 'method_C'],
+@pytest.mark.parametrize(argnames='method_indirect,x',
+                         argvalues=[('method_A', '1'), ('method_B', '2'), ('method_C', '3')],
                          indirect=True)
-def test_indirect(method_indirect):
+def test_indirect(method_indirect, x):
     print(f'我是变量  {method_indirect}')
+    print(f'我是变量  {x}')
