@@ -37,6 +37,7 @@ def test_user(user):  # 未指定用户
 
 @pytest.fixture()
 def method_indirect(request):
+    # 可以通过request.param接受传递过来的参数，二次处理
     return '我是夹具' + request.param
 
 
