@@ -4,9 +4,9 @@
 
 # pytest 会提供一些钩子函数，来满足我们一些需求。
 def pytest_collection_modifyitems(items):
-    print(items)
+    # print(items)
     for item in items:
         item.name = item.name.encode("utf-8").decode("unicode_escape")
-        print('item.name:', item.name)
+        # print('item.name:', item.name)
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
-        print('item._nodeid:', item._nodeid)
+        # print('item._nodeid:', item._nodeid)
