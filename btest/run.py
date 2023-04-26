@@ -19,4 +19,7 @@ if __name__ == '__main__':
 
     '''D4篇'''
     # 通过关键字表达式进行测试
-    pytest.main(['-qs', '-k', 'student', '.\\D4\\'])
+    # pytest.main(['-qs', '-k', 'student', '.\\D4\\'])
+
+    '''D5篇'''
+    pytest.main(['-qs', '.\\D5\\test_06_subset_param.py'])

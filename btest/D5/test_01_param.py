@@ -17,6 +17,7 @@ def test_eval_sample(input_expecteds):
 
 
 # 方式2: 参数化夹具。优点：可以共享
+# 参数写在fixture注解里。
 @pytest.fixture(params=[("3+5", 8), ("2+4", 66), ("6*9", 42)], ids=[1, 2, 3])
 def actual_input_expected(request):
     yield request.param
@@ -29,6 +30,7 @@ def test_eval_fixture_param(actual_input_expected):
 
 
 # 方式3：参数化装饰器。优点：简洁、可读性强
+# 参数写在测试用例上parametrize里
 @pytest.mark.parametrize(argnames="actual_input,expected,abc",
                          argvalues=[("3+5", 8, 9), ("2+4", 66, 1), ("6*9", 42, 2)],
                          indirect=False,
