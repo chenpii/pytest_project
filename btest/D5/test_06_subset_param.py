@@ -21,7 +21,8 @@ def user(request):
 def test_everyone(user):
     print(f'\n访问权限测试角色{user}')
 
-
-@pytest.mark.parametrize('user', ['管理员2'], indirect=['user'])
+# 参数化装饰器
+# 当用例使用了参数化装饰器，参数化装饰器里面的参数就会覆盖掉参数化夹具中的参数
+@pytest.mark.parametrize('user', ['管理员'], indirect=['user'])
 def test_just_admin(user):
     print(f'\n访问权限测试角色{user}')

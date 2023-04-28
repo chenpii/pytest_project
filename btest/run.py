@@ -22,4 +22,6 @@ if __name__ == '__main__':
     # pytest.main(['-qs', '-k', 'student', '.\\D4\\'])
 
     '''D5篇'''
-    pytest.main(['-qs', '.\\D5\\test_06_subset_param.py'])
+    # pytest.main(['-qs', '.\\D5\\test_05_indirect.py'])
+    # pytest.main(['-qs', '.\\D5\\test_06_subset_param.py'])
+    pytest.main(['-sv', '.\\D5\\test_07_second_param.py'])

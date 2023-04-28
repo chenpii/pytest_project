@@ -1,5 +1,7 @@
 """
 多个夹具的间接参数化
+
+使用场景：组装拼接参数或把很长很多的参数拆开分为夹具进行开发
 """
 import pytest
 from pytest_assume.plugin import assume

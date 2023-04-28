@@ -48,7 +48,7 @@ class TestPerson():
     def test_age(self, person):
         assert 18 <= person.age <= 25
 
-    def test_height(self, person):
+    def test_height(self, person): # 这里有个缺陷，在测试类的第二个方法之后，控制台输出的测试用例名字中文会乱码
         assert 165 <= person.height <= 175
 
     def test_weight(self, person):

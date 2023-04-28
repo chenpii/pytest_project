@@ -8,6 +8,9 @@
 
 
 （说明：如果有夹具名为user，会把[“管理员”, “会员”, “游客”] 传给 名为user的fixture夹具。
+在user夹具内部，使用request.param来接收传过来的参数数据，得到数据你可以选择二次加功能。
+加工过的数据，自动的返回给我们的用例。
+作用：在不改变参数列表和用例内部逻辑的情况下，间接的对参数进行了处理。
 '''
 import pytest
 
@@ -15,6 +18,8 @@ import pytest
 @pytest.fixture()
 def user(request):  # user是夹具
     function_name = request.function.__name__
+    # 这里不使用request.param的原因是有时候没有参数会报错，所以使用getattr(request,'param','游客')来对没参数时进行一个默认赋值
+    # role = request.param
     role = getattr(request, 'param', '游客')  # 当没有参数时，返回游客
 
     print(f'\n-----{function_name}:登陆角色为:{role}----')
@@ -24,7 +29,7 @@ def user(request):  # user是夹具
 
 @pytest.mark.parametrize(argnames='user',
                          argvalues=['管理员', '会员', '游客'],
-                         indirect=False
+                         indirect=True  # 开启，则会寻找跟参数名一样的夹具，找到后把参数传递给夹具
                          )
 def test_acess(user):
     print(f'访问权限测试 {user}')
