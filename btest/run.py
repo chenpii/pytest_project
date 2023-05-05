@@ -29,4 +29,5 @@ if __name__ == '__main__':
     '''D6篇'''
     # 自定义命令行参数
     # pytest.main(['-sv', '--scope=module', '.\\D6\\highFixture\\test_a.py'])
-    pytest.main(['-sv', '-k', 'dynamic', '--scope=session', '.\\D6\\highFixture'])
+    # pytest.main(['-sv', '-k', 'dynamic', '--scope=session', '.\\D6\\highFixture'])
+    pytest.main(['-sv',  '.\\D6\\highFixture\\test_tmp_path_factory.py'])

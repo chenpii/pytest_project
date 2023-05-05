@@ -38,3 +38,23 @@ def dynamic_scope(fixture_name, config):
 @pytest.fixture(scope=dynamic_scope)
 def student():
     return []
+
+
+# tmp_path是一个函数级别的夹具
+@pytest.fixture()
+def tmp_file(tmp_path):
+    file = tmp_path / 'file.txt'
+    file.write_text("hello")
+    return file
+
+
+# 低级别夹具不能传到高级别夹具中，但是反之可以
+# tmp_path_factory 会话范围的夹具，可用于从任何其他夹具或测试创建任意临时目录
+@pytest.fixture(scope='session') # 防止降级
+def tmp_factory(tmp_path_factory):
+    path = tmp_path_factory.mktemp("sub")
+    print(f"factory_path:{path}")
+    file = path / 'file.txt'
+    file.write_text('hello')
+    return file
+
