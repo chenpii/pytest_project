@@ -24,4 +24,9 @@ if __name__ == '__main__':
     '''D5篇'''
     # pytest.main(['-qs', '.\\D5\\test_05_indirect.py'])
     # pytest.main(['-qs', '.\\D5\\test_06_subset_param.py'])
-    pytest.main(['-sv', '.\\D5\\test_07_second_param.py'])
+    # pytest.main(['-sv', '.\\D5\\test_07_second_param.py'])
+
+    '''D6篇'''
+    # 自定义命令行参数
+    # pytest.main(['-sv', '--scope=module', '.\\D6\\highFixture\\test_a.py'])
+    pytest.main(['-sv', '-k', 'dynamic', '--scope=session', '.\\D6\\highFixture'])
