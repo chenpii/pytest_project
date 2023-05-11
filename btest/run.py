@@ -50,4 +50,5 @@ if __name__ == '__main__':
     # pytest.main(['-sv', '-m', 'Bili and Soul', '.\\D7\\'])
 
     '''D8 mock'''
-    pytest.main(['-sv', '.\\D8\\test_02_mock.py'])
+    # pytest.main(['-sv', '.\\D8\\test_02_mock.py'])
+    pytest.main(['-sv', '.\\D8\\test_03_mock.py'])
