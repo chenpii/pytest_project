@@ -46,5 +46,8 @@ if __name__ == '__main__':
     # pytest.main(['-sv', '-m', 'Meituan', '.\\D7\\test_04_class_tag.py'])
     # # 只运行TikTok标记的模块
     # pytest.main(['-sv', '-m', 'TikTok', '.\\D7\\'])
-    # 运行标记了Bili 和Soul的模块
-    pytest.main(['-sv', '-m', 'Bili and Soul', '.\\D7\\'])
+    # # 运行标记了Bili 和Soul的模块
+    # pytest.main(['-sv', '-m', 'Bili and Soul', '.\\D7\\'])
+
+    '''D8 mock'''
+    pytest.main(['-sv', '.\\D8\\test_02_mock.py'])

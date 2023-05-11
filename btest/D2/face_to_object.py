@@ -25,6 +25,13 @@ class Person:
     def update(self, **changes):
         return replace(self, **changes)
 
+    # 待完成
+    def cook(self):
+        pass
+
+    def eat(self, food):
+        pass
+
 
 if __name__ == '__main__':
     # 把字典转换成类对象
