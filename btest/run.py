@@ -6,7 +6,40 @@
 # 4. pytest -q .\D1\test_01_pass_fail.py    # 指定模块
 # 5. pytest -q .\D1\test_05_exception.py::test_student_score_raise  # 指定测试用例
 """
+import os
+import time
+
 import pytest
+
+
+# allure执行函数
+def mk_allure_report():
+    # 准备好报告工具、和报告的存储目录 以及web服务的IP地址和端口号
+    ALLURE_PATH = os.getcwd() + "\\D10\\allure-2.18.0\\bin"
+    ALLURE_RESULTS = os.getcwd() + "\\D10\\report\\allure-results"
+    ALLURE_REPORT = os.getcwd() + "\\D10\\report\\allure-report"
+    ALLURE_SERVER_IP = "127.0.0.1"
+    ALLURE_SERVER_PORT = "8086"
+
+    # 执行用例
+    pytest.main(['-sq', '--alluredir', ALLURE_RESULTS, ".\\D10\\"])
+
+    # 把ALLURE_RESULTS目录的结果数据-->生成报告到ALLURE_REPORT目录下
+    mk_report_cmd = f"{ALLURE_PATH}/allure " \
+                    f"generate " \
+                    f"-c {ALLURE_RESULTS} " \
+                    f"-o {ALLURE_REPORT}"
+    os.popen(mk_report_cmd)
+
+    time.sleep(3)  # 因生成报告需要时间，强制等待。
+
+    # 打开报告web 服务
+    open_report_cmd = f"{ALLURE_PATH}/allure " \
+                      f"open " \
+                      f"-h {ALLURE_SERVER_IP} " \
+                      f"-p {ALLURE_SERVER_PORT} {ALLURE_REPORT}"
+    os.popen(open_report_cmd)
+
 
 if __name__ == '__main__':
     '''D1'''
@@ -62,3 +95,4 @@ if __name__ == '__main__':
     # pytest.main(['-sv', '.\\D9\\test_07_base_url.py'])
 
     '''D10 '''
+    mk_allure_report()
