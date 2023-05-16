@@ -51,4 +51,13 @@ if __name__ == '__main__':
 
     '''D8 mock'''
     # pytest.main(['-sv', '.\\D8\\test_02_mock.py'])
-    pytest.main(['-sv', '.\\D8\\test_03_mock.py'])
+    # pytest.main(['-sv', '.\\D8\\test_03_mock.py'])
+
+    '''D9 plugins'''
+    # pytest.main(['-sv', '.\\D9\\test_02_repeat.py'])
+    # pytest.main(['-sv', '.\\D9\\test_03_error_repeat.py'])
+    # pytest.main(['-sv', '.\\D9\\test_04_fun_dependency.py'])
+    # pytest.main(['-sv', '.\\D9\\test_05_param_dependency.py'])
+    # pytest.main(['-sv', '.\\D9\\test_06_order.py'])
+    # pytest.main(['-sv', '.\\D9\\test_07_base_url.py'])
+    pytest.main(['-sv', '.\\D9\\test_09_xdist.py'])

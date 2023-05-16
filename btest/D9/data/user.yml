@@ -1,0 +1,11 @@
+test_login: # 用例名称
+  # 用户名,密码,期望结果,
+  username: "testBoy"
+  password: "123456"
+  expected: "仪表盘"
+
+
+test_logout:
+  username: "testGirl"
+  password: '123456'
+  expected: "欢迎再来"
