@@ -10,3 +10,4 @@ pytest-order
 pytest-base-url
 pytest-variables[yaml]
 pytest-xdist[psutil]
+pytest-html

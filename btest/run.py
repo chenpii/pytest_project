@@ -60,4 +60,5 @@ if __name__ == '__main__':
     # pytest.main(['-sv', '.\\D9\\test_05_param_dependency.py'])
     # pytest.main(['-sv', '.\\D9\\test_06_order.py'])
     # pytest.main(['-sv', '.\\D9\\test_07_base_url.py'])
-    pytest.main(['-sv', '.\\D9\\test_09_xdist.py'])
+
+    '''D10 '''
