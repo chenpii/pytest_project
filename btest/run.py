@@ -16,8 +16,8 @@ import pytest
 def mk_allure_report():
     # 准备好报告工具、和报告的存储目录 以及web服务的IP地址和端口号
     ALLURE_PATH = os.getcwd() + "\\D10\\allure-2.18.0\\bin"
-    ALLURE_RESULTS = os.getcwd() + "\\D10\\report\\allure-results"
-    ALLURE_REPORT = os.getcwd() + "\\D10\\report\\allure-report"
+    ALLURE_RESULTS = os.getcwd() + "\\D10\\report\\allure-results"  # 测试结果路径
+    ALLURE_REPORT = os.getcwd() + "\\D10\\report\\allure-report"  # 测试报告路径
     ALLURE_SERVER_IP = "127.0.0.1"
     ALLURE_SERVER_PORT = "8086"
 
